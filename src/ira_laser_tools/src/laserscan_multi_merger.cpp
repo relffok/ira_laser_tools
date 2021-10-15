@@ -269,7 +269,7 @@ void LaserscanMerger::laser_scan_to_cloud_deque(
 
   int pile_index = get_matching_pile(topic_index, scan->header.stamp);
 
-  if (pile_index > 0){
+  if (pile_index >= 0){
     cloud_deque[pile_index].add(topic_index, pcl_cloud);
   } else {
     this->cloud_deque.push_back(
